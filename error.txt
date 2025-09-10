@@ -1,13 +1,8 @@
 Vercel CLI 47.0.7
 Retrieving project…
 Deploying drjforrests-projects/academic-profile
-Uploading [--------------------] (0.0B/208.7KB)
-Uploading [======--------------] (66.5KB/208.7KB)
-Uploading [==========----------] (114.5KB/208.7KB)
-Uploading [===============-----] (162.5KB/208.7KB)
-Uploading [====================] (208.7KB/208.7KB)
-Inspect: https://vercel.com/drjforrests-projects/academic-profile/BDTjtJzYvi65T3oTUw4EF1fstEZa [3s]
-Production: https://academic-profile-3ninpxcop-drjforrests-projects.vercel.app [3s]
+Inspect: https://vercel.com/drjforrests-projects/academic-profile/8HcucTQQW6g1TDKvVd1bspiUJ9Kv [2s]
+Production: https://academic-profile-l99nptw64-drjforrests-projects.vercel.app [2s]
 Queued
 Building
 Completing

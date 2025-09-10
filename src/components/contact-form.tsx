@@ -45,25 +45,45 @@ export function ContactForm() {
     const {formState: {isSubmitting}} = form;
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.log(values);
-        toast({
-            title: "Message Sent!",
-            description: "Thank you for reaching out. I'll get back to you shortly.",
-        });
-        form.reset();
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Something went wrong');
+            }
+
+            toast({
+                title: "Message Sent!",
+                description: "Thank you for reaching out. I'll get back to you shortly.",
+            });
+            form.reset();
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            toast({
+                title: "Error",
+                description: "Failed to send message. Please try again.",
+                variant: "destructive",
+            });
+        }
     }
     
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Send a Message</CardTitle>
-        <CardDescription>
+    <Card className="shadow-lg border-2 border-accent-950/20 bg-accent-950/5">
+      <CardHeader className="pb-6">
+        <CardTitle className="font-headline text-2xl">Send a Message</CardTitle>
+        <CardDescription className="text-base">
             I'll do my best to respond within 48 hours.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pt-0">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -109,7 +129,7 @@ export function ContactForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button type="submit" className="w-full h-12 text-base font-semibold" disabled={isSubmitting}>
               {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
