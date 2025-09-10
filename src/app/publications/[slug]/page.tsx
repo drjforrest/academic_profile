@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all publications
@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const publication = publications.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const publication = publications.find((p) => p.slug === slug);
 
   if (!publication) {
     return {
@@ -42,8 +43,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function PublicationPage({ params }: Props) {
-  const publication = publications.find((p) => p.slug === params.slug);
+export default async function PublicationPage({ params }: Props) {
+  const { slug } = await params;
+  const publication = publications.find((p) => p.slug === slug);
 
   if (!publication) {
     notFound();

@@ -1,3 +1,5 @@
+'use client';
+
 import { AlertCircle, BarChart3, CheckCircle, ChevronLeft, ChevronRight, FileText, Lightbulb, Send, Settings, Target, Users } from 'lucide-react';
 import { useCallback, useState } from 'react';
 

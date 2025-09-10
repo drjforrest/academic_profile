@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/contact-form";
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import { Icons } from "@/components/icons";
 import { SOCIAL_LINKS } from "@/lib/constants";
 
@@ -13,11 +13,6 @@ const contactDetails = [
     icon: <Linkedin className="h-6 w-6 text-primary" />,
     text: "LinkedIn Profile",
     href: SOCIAL_LINKS.linkedin,
-  },
-  {
-    icon: <Twitter className="h-6 w-6 text-primary" />,
-    text: "Twitter / X",
-    href: SOCIAL_LINKS.twitter,
   },
   {
     icon: <Icons.orcid className="h-6 w-6 text-primary" />,

@@ -114,10 +114,21 @@ let aiClient: AIClient | null = null;
 export function getAIClient(): AIClient {
   if (!aiClient) {
     const provider = (process.env.AI_PROVIDER as 'mistral' | 'deepseek') || 'deepseek';
-    const apiKey = process.env.AI_API_KEY;
+    
+    // Try provider-specific API key first, then fallback to generic AI_API_KEY
+    let apiKey: string | undefined;
+    if (provider === 'deepseek') {
+      apiKey = process.env.DEEPSEEK_API_KEY || process.env.AI_API_KEY;
+    } else if (provider === 'mistral') {
+      apiKey = process.env.MISTRAL_API_KEY || process.env.AI_API_KEY;
+    } else {
+      apiKey = process.env.AI_API_KEY;
+    }
     
     if (!apiKey) {
-      throw new Error('AI_API_KEY environment variable is required');
+      const requiredVar = provider === 'deepseek' ? 'DEEPSEEK_API_KEY' : 
+                         provider === 'mistral' ? 'MISTRAL_API_KEY' : 'AI_API_KEY';
+      throw new Error(`${requiredVar} environment variable is required`);
     }
 
     aiClient = new AIClient({
