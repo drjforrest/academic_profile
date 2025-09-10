@@ -82,7 +82,8 @@ src/
 ### AI Development
 - Simple AI client supporting Mistral and DeepSeek APIs in `src/lib/ai-client.ts`
 - AI functions are in `src/ai/` (carousel-content.ts, homepage-visuals.ts)
-- Environment variables: `AI_PROVIDER`, `AI_API_KEY`, `AI_MODEL` (see .env.example)
+- Environment variables: `AI_PROVIDER`, `AI_API_KEY`, `AI_MODEL` (see .env.example for local development)
+- Production environment already configured with API keys in Vercel
 - DeepSeek is cost-effective default, Mistral also supported
 
 When making changes, ensure compatibility with the existing shadcn/ui component system and follow the established patterns for TypeScript, Tailwind CSS, and component composition.

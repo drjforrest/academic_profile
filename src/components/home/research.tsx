@@ -1,130 +1,128 @@
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card";
-import { Lightbulb, Users, Shield, Globe } from "lucide-react";
+import { Globe, Lightbulb, Shield, Users } from "lucide-react";
 
-export function DualRole() {
+export function Research() {
   return (
     <section>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold font-headline tracking-tight">
+          <h2 className="text-5xl text-primary-950 font-bold font-headline tracking-tight">
             Research Mission
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Ensuring digital transformation minimizes—not widens—global health
-            disparities through equitable research ecosystems grounded in data
-            sovereignty, rapid evidence generation, and local agency.
+            My research spans across projects that examine how<strong> digital technologies can be deliberately designed, adapted, and governed,</strong> to improve health outcomes and promote health equity. Leveraging strengths in global health partnerships for interdisciplinary inquiry, I investigate three interconnected challenges that emerge when digital innovation disrupts conventional health research, methods, and practice norms.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="flex flex-col">
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Shield className="h-5 w-5 text-primary" />
+                  <Shield className="h-10 w-10 text-accent-950" />
                 </div>
-                <CardTitle className="font-headline text-lg">
-                  AI Governance & Health Equity
+                <CardTitle className="font-headline text-accent-950 text-xl">
+                  AI Governance & Digital Equity
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-sm">
+              <CardDescription className="text-md">
                 Advancing practices and protections so artificial intelligence
                 drives equitable health outcomes—especially in emergencies.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Globe className="h-5 w-5 text-primary" />
+                  <Globe className="h-10 w-10 text-accent-950" />
                 </div>
-                <CardTitle className="font-headline text-lg">
-                  Digital Health Systems
+                <CardTitle className="font-headline text-accent-950 text-xl">
+                  Digital Health Information Systems
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-sm">
+              <CardDescription className="text-md">
                 Integrating technology in resource-limited contexts with a focus
                 on sustainability and community ownership.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Lightbulb className="h-5 w-5 text-primary" />
+                  <Lightbulb className="h-10 w-10 text-accent-950" />
                 </div>
-                <CardTitle className="font-headline text-lg">
-                  Resilient Clinical Research
+                <CardTitle className="font-headline text-accent-950 text-xl">
+                  Resilient Clinical Research Opereations & Infrastructure
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-sm">
-                Designing adaptive methods and partnerships to accelerate
-                rigorous evidence when it matters most.
+              <CardDescription className="text-md">
+                Designing and operationally implementing adaptive platform trial methods in partnerships to accelerate
+                evidence generation when it matters most.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Users className="h-5 w-5 text-primary" />
+                  <Users className="h-10 w-10 text-accent-950" />
                 </div>
-                <CardTitle className="font-headline text-lg">
-                  Community-Centred Implementation
+                <CardTitle className="font-headline font-strong text-accent-950 text-xl">
+                  Community-Centred Implementation Science
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-sm">
+              <CardDescription className="text-md">
                 Using participatory, iterative methods to authentically engage
                 and empower communities in health innovation.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Shield className="h-5 w-5 text-primary" />
+                  <Shield className="h-10 w-10 text-accent-950" />
                 </div>
-                <CardTitle className="font-headline text-lg">
-                  Information Integrity
+                <CardTitle className="font-headline text-accent-950 text-xl">
+                  Misinformation & Information Integrity
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-sm">
-                Studying the impacts of digital misinformation on public health
+              <CardDescription className="text-md"> 
+                Studying the impacts of digital misinformation, particularly during health emergencies, on public health
                 trust, especially for marginalized groups.
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="flex flex-col">
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Globe className="h-5 w-5 text-primary" />
+                  <Globe className="h-10 w-10 text-accent-950" />
                 </div>
-                <CardTitle className="font-headline text-lg">
+                <CardTitle className="font-headline text-accent-950 text-xl">
                   Technology Equity & Data Sovereignty
                 </CardTitle>
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-sm">
+              <CardDescription className="text-md">
                 Analyzing global power, access, and control in digital health,
                 to center local voices and priorities.
               </CardDescription>

@@ -1,25 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import { Menu, Linkedin, Twitter, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { NAV_LINKS, SOCIAL_LINKS, SITE_INFO } from "@/lib/constants";
-import { Icons } from "./icons";
-import { usePathname } from "next/navigation";
+import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-white/20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 text-slate-800">
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
@@ -83,27 +81,6 @@ export function Header() {
                 </div>
               </SheetContent>
             </Sheet>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" asChild>
-              <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer">
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer">
-                <Linkedin className="h-4 w-4" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href={SOCIAL_LINKS.orcid} target="_blank" rel="noreferrer">
-                <Icons.orcid className="h-4 w-4" />
-                <span className="sr-only">ORCID</span>
-              </a>
-            </Button>
-            <ThemeToggle />
           </div>
         </div>
       </div>

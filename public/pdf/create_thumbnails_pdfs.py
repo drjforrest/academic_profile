@@ -12,14 +12,15 @@ except ImportError:
     print("For macOS: brew install poppler")
     sys.exit(1)
 
-def create_pdf_thumbnails(directory_path, output_dir="thumbnails", thumbnail_size=(200, 200)):
+def create_pdf_thumbnails(directory_path, output_dir="thumbnails", thumbnail_size=(1600, 2200), dpi=300):
     """
-    Walks through a directory and creates PNG thumbnails of each PDF file.
+    Walks through a directory and creates high-resolution PNG thumbnails of each PDF file.
     
     Args:
         directory_path: Path to the directory containing PDF files
         output_dir: Directory where thumbnails will be saved (relative to directory_path)
-        thumbnail_size: Size of the thumbnail as (width, height)
+        thumbnail_size: Size of the thumbnail as (width, height) - default 1600x2200 for near full-size quality (~80% of original)
+        dpi: DPI for PDF conversion - higher values give better quality (default 300)
     """
     # Convert to Path object for easier path manipulation
     directory = Path(directory_path)
@@ -50,18 +51,18 @@ def create_pdf_thumbnails(directory_path, output_dir="thumbnails", thumbnail_siz
                 thumbnail_path = thumbnails_dir / thumbnail_name
                 
                 try:
-                    # Convert first page of PDF to image
+                    # Convert first page of PDF to high-resolution image
                     print(f"Processing: {pdf_path}")
-                    images = convert_from_path(pdf_path, first_page=1, last_page=1)
+                    images = convert_from_path(pdf_path, first_page=1, last_page=1, dpi=dpi)
                     
                     if images:
-                        # Get the first page and create a thumbnail
+                        # Get the first page and create a high-quality thumbnail
                         thumb = images[0].copy()
                         thumb.thumbnail(thumbnail_size, PIL.Image.LANCZOS)
                         
-                        # Save the thumbnail
-                        thumb.save(thumbnail_path, 'PNG')
-                        print(f"Created thumbnail: {thumbnail_path}")
+                        # Save the thumbnail with high quality
+                        thumb.save(thumbnail_path, 'PNG', optimize=True, quality=95)
+                        print(f"Created high-res thumbnail: {thumbnail_path} ({thumb.size[0]}x{thumb.size[1]})")
                     else:
                         print(f"Warning: Could not extract images from {pdf_path}")
                         

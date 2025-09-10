@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Linkedin, Twitter } from "lucide-react";
 import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import { Linkedin } from "lucide-react";
+import Link from "next/link";
 import { Icons } from "./icons";
 import { Button } from "./ui/button";
 
@@ -11,10 +11,10 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-start gap-4">
             <Link href="/" className="font-headline text-2xl font-bold">
-              Forrest Insights
+              Dr Jamie I Forrest PhD, MPH
             </Link>
             <p className="text-muted-foreground">
-              Collaboration and Capacity in the Age of AI
+              Technology, Adaptation, and Equity in Global Health Research and Practice
             </p>
           </div>
 
@@ -48,13 +48,7 @@ export function Footer() {
             </div>
             <div className="flex flex-col gap-3">
               <h4 className="font-semibold">Connect</h4>
-              <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" asChild>
-                  <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noreferrer">
-                    <Twitter className="h-5 w-5" />
-                    <span className="sr-only">Twitter</span>
-                  </a>
-                </Button>
+              <div className="flex items-center gap-2">          
                 <Button variant="ghost" size="icon" asChild>
                   <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer">
                     <Linkedin className="h-5 w-5" />

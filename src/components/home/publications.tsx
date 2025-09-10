@@ -1,9 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { publications } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -12,10 +9,12 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { publications } from "@/lib/data";
 import Autoplay from "embla-carousel-autoplay";
-import { cn } from "@/lib/utils";
+import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 
 const TWEEN_FACTOR = 4.2;
 
@@ -61,13 +60,13 @@ export function Publications() {
   return (
     <section>
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight">
-            Digital Showcase
+        <div className="mx-auto max-w-5xl text-primary-950 text-center">
+          <h2 className="font-headline text-5xl text-primary-950 font-bold tracking-tight">
+            Publications & Research Highlights
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A selection of my recent research, articles, and contributions to
-            the field, presented in a digital art gallery format.
+            A selection of my published scientific papers and contributions to
+            the field, presented in a digital art gallery format. Click on any paper to read more.
           </p>
         </div>
 
@@ -76,7 +75,7 @@ export function Publications() {
             setApi={setApi}
             plugins={[
               Autoplay({
-                delay: 5000,
+                delay: 8000,
                 stopOnInteraction: true,
               }),
             ]}
@@ -87,20 +86,23 @@ export function Publications() {
             }}
             className="w-full"
           >
-            <CarouselContent className="[perspective:1000px]">
+            <CarouselContent className="[perspective:1000px] -ml-4">
               {publications.map((publication, index) => (
                 <CarouselItem
                   key={publication.id}
-                  className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                  className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 pl-4"
                   style={{
                     ...(tweenValues.length && {
-                      transform: `rotateY(${
-                        (tweenValues[index] - 1) * 20
-                      }deg) scale(${
-                        1 - Math.abs((tweenValues[index] - 1) * 0.2)
-                      })`,
-                      filter: `blur(${Math.abs(tweenValues[index] - 1) * 4}px)`,
+                      transform: `
+                        rotateY(${(tweenValues[index] - 1) * 25}deg) 
+                        scale(${1 - Math.abs((tweenValues[index] - 1) * 0.15)})
+                        translateZ(${Math.abs(tweenValues[index] - 1) * -50}px)
+                        translateX(${(tweenValues[index] - 1) * -20}px)
+                      `,
+                      filter: `blur(${Math.abs(tweenValues[index] - 1) * 2}px) brightness(${1 - Math.abs((tweenValues[index] - 1) * 0.3)})`,
                       transformStyle: "preserve-3d",
+                      zIndex: Math.round((1 - Math.abs(tweenValues[index] - 1)) * 10),
+                      opacity: Math.abs(tweenValues[index] - 1) > 0.8 ? 0.3 : 1,
                     }),
                   }}
                 >
@@ -108,7 +110,7 @@ export function Publications() {
                     href={`/publications/${publication.slug}`}
                     className="group block h-[400px] w-full"
                   >
-                    <div className="relative h-full w-full overflow-hidden rounded-lg border-4 border-card shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105">
+                    <div className="relative h-full w-full overflow-hidden rounded-xl border-2 border-white/20 shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105 backdrop-blur-sm bg-white/10">
                       <Image
                         src={publication.imageUrl}
                         alt={publication.title}
@@ -117,15 +119,10 @@ export function Publications() {
                         data-ai-hint={publication.aiHint}
                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                       />
-                      <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:bg-black/50" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent transition-all duration-300 group-hover:from-black/60 group-hover:to-black/20 group-hover:backdrop-blur-sm" />
 
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-100 transition-opacity duration-300 group-hover:opacity-0">
-                        <h3 className="truncate font-headline text-lg font-semibold">
-                          {publication.title}
-                        </h3>
-                      </div>
 
-                      <div className="absolute inset-0 flex translate-y-4 flex-col items-center justify-center p-4 text-center text-primary-foreground opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="absolute inset-0 flex translate-y-4 flex-col items-center justify-center p-4 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <h3 className="font-headline text-xl font-bold">
                           {publication.title}
                         </h3>
@@ -139,13 +136,13 @@ export function Publications() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden text-foreground sm:flex" />
-            <CarouselNext className="hidden text-foreground sm:flex" />
+            <CarouselPrevious className="hidden sm:flex h-16 w-16 text-white bg-accent-600 border-2 border-accent-600 hover:bg-accent-950 hover:text-white shadow-lg" />
+            <CarouselNext className="hidden sm:flex h-16 w-16 text-white bg-accent-600 border-2 border-accent-600 hover:bg-accent-950 hover:text-white shadow-lg" />
           </Carousel>
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="bg-accent-600 text-white border-accent-600 hover:bg-accent-950 hover:text-white">
             <Link href="/publications">View All Publications</Link>
           </Button>
         </div>
