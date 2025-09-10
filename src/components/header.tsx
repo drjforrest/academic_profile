@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Linkedin, Twitter } from "lucide-react";
+import { Menu, Linkedin, Twitter, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -10,7 +10,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { NAV_LINKS, SOCIAL_LINKS } from "@/lib/constants";
+import { NAV_LINKS, SOCIAL_LINKS, SITE_INFO } from "@/lib/constants";
 import { Icons } from "./icons";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -24,7 +24,7 @@ export function Header() {
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold sm:inline-block font-headline text-lg">
-              Forrest Insights
+              Dr Jamie Forrest PhD, MPH
             </span>
           </Link>
           <nav className="flex items-center gap-6 text-sm">
@@ -36,7 +36,7 @@ export function Header() {
                   "transition-colors hover:text-foreground/80",
                   pathname === link.href
                     ? "text-foreground"
-                    : "text-foreground/60"
+                    : "text-foreground/60",
                 )}
               >
                 {link.label}
@@ -57,11 +57,11 @@ export function Header() {
               <SheetContent side="left">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center border-b pb-4">
-                     <Link href="/" className="flex items-center space-x-2">
-                       <span className="font-bold font-headline text-lg">
-                         Forrest Insights
-                       </span>
-                     </Link>
+                    <Link href="/" className="flex items-center space-x-2">
+                      <span className="font-bold font-headline text-lg">
+                        Dr Jamie Forrest PhD, MPH
+                      </span>
+                    </Link>
                   </div>
                   <nav className="flex-1 mt-6 grid gap-4">
                     {NAV_LINKS.map((link) => (
@@ -72,7 +72,7 @@ export function Header() {
                             "text-lg font-medium transition-colors hover:text-foreground/80",
                             pathname === link.href
                               ? "text-foreground"
-                              : "text-foreground/60"
+                              : "text-foreground/60",
                           )}
                         >
                           {link.label}

@@ -18,31 +18,33 @@ export default function PublicationsPage() {
   const allTags = [...new Set(publications.flatMap((p) => p.tags))];
 
   const handleCopyCitation = (publication: Publication) => {
-    const citation = `${publication.authors.join(", ")}. (${
+    const citation = `${publication.authors}. (${
       publication.year
-    }). ${publication.title}. ${publication.journal}. doi:${publication.doi}`;
+    }). ${publication.title}. ${publication.journal}.${publication.doi ? ` doi:${publication.doi}` : ""}`;
     navigator.clipboard.writeText(citation);
     toast({
       title: "Citation Copied",
       description: "The citation has been copied to your clipboard.",
     });
   };
-  
+
   const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
   const filteredPublications = publications.filter((p) => {
     const matchesSearch =
       p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      p.authors.join(" ").toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.authors.toLowerCase().includes(searchTerm.toLowerCase()) ||
       p.journal.toLowerCase().includes(searchTerm.toLowerCase()) ||
       p.year.toString().includes(searchTerm);
-    
-    const matchesTags = selectedTags.length === 0 || selectedTags.every(tag => p.tags.includes(tag));
-      
+
+    const matchesTags =
+      selectedTags.length === 0 ||
+      selectedTags.every((tag) => p.tags.includes(tag));
+
     return matchesSearch && matchesTags;
   });
 
@@ -74,7 +76,7 @@ export default function PublicationsPage() {
               />
             </div>
             <div className="flex flex-wrap gap-2">
-              {allTags.map(tag => (
+              {allTags.map((tag) => (
                 <Badge
                   key={tag}
                   variant={selectedTags.includes(tag) ? "default" : "secondary"}
@@ -89,7 +91,10 @@ export default function PublicationsPage() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredPublications.map((publication) => (
-              <Card key={publication.id} className="flex flex-col overflow-hidden">
+              <Card
+                key={publication.id}
+                className="flex flex-col overflow-hidden"
+              >
                 <div className="relative aspect-video">
                   <Image
                     src={publication.imageUrl}
@@ -102,20 +107,28 @@ export default function PublicationsPage() {
                 <CardContent className="flex flex-1 flex-col p-6">
                   <div className="flex-1">
                     <div className="flex flex-wrap gap-2">
-                        {publication.tags.map(tag => (
-                            <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
-                        ))}
+                      {publication.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                     <h3 className="mt-4 font-headline text-lg font-semibold">
                       {publication.title}
                     </h3>
                     <p className="mt-2 text-sm text-muted-foreground">
-                      {publication.authors.map((author, i) => (
-                        <span key={i}>
-                          {author.includes("Forrest") ? <b>{author}</b> : author}
-                          {i < publication.authors.length - 1 ? ", " : ""}
-                        </span>
-                      ))}
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: publication.authors.replace(
+                            /\b(JI\s+Forrest|J\.?\s*I\.?\s*Forrest|Forrest\s*,?\s*J\.?\s*I?\.?)\b/gi,
+                            "<b>$1</b>",
+                          ),
+                        }}
+                      />
                     </p>
                     <p className="mt-1 text-sm text-muted-foreground">
                       <i>{publication.journal}</i>, {publication.year}
@@ -144,9 +157,11 @@ export default function PublicationsPage() {
             ))}
           </div>
           {filteredPublications.length === 0 && (
-             <div className="text-center col-span-full py-16">
-                 <p className="text-lg text-muted-foreground">No publications found matching your criteria.</p>
-             </div>
+            <div className="text-center col-span-full py-16">
+              <p className="text-lg text-muted-foreground">
+                No publications found matching your criteria.
+              </p>
+            </div>
           )}
         </div>
       </section>

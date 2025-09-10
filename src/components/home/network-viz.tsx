@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 
 export function NetworkViz() {
   return (
@@ -8,21 +9,49 @@ export function NetworkViz() {
           <div className="order-2 md:order-1">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
               <Image
-                src="https://picsum.photos/800/600"
-                alt="Network visualization of global research collaboration"
+                src="/images/earth-2.PNG"
+                alt="Global health researcher working across continents"
                 fill
                 className="object-cover"
-                data-ai-hint="network visualization data flow"
               />
             </div>
           </div>
           <div className="order-1 md:order-2">
             <h2 className="font-headline text-3xl font-bold tracking-tight">
-              How do digital tools change global research collaboration?
+              Global Health Leadership Across Continents
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Using network analysis and data visualization, I map and analyze the flows of knowledge, funding, and partnership in the digital age. These visualizations help identify key actors, uncover hidden structures, and inform strategies for more equitable and effective collaboration.
+              A global health researcher and strategy leader advancing
+              technology and equity in health emergency response across Africa,
+              North America, and beyond. My work bridges research, policy, and
+              practice to build resilient health systems.
             </p>
+            <div className="mt-6 space-y-4">
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">
+                  Current Focus
+                </h3>
+                <p className="text-muted-foreground">
+                  Postdoctoral Research Fellow investigating digital
+                  misinformation, AI governance, and information integrity at
+                  UBC's Health Emergencies and Resiliency in Outbreaks (HERO)
+                  Lab.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">
+                  Experience Highlights
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary">Chief Partnerships Officer</Badge>
+                  <Badge variant="secondary">
+                    Managing Director East Africa
+                  </Badge>
+                  <Badge variant="secondary">$10M+ Research Funding</Badge>
+                  <Badge variant="secondary">62 Publications</Badge>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -104,10 +104,8 @@ export function Publications() {
                     }),
                   }}
                 >
-                  <a
-                    href={publication.pdfUrl}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    href={`/publications/${publication.slug}`}
                     className="group block h-[400px] w-full"
                   >
                     <div className="relative h-full w-full overflow-hidden rounded-lg border-4 border-card shadow-2xl transition-all duration-300 ease-in-out group-hover:scale-105">
@@ -133,11 +131,11 @@ export function Publications() {
                         </h3>
                         <p className="mt-2 text-sm">({publication.year})</p>
                         <Button size="sm" className="mt-4">
-                          <ExternalLink className="mr-2 h-4 w-4" /> View Work
+                          <ExternalLink className="mr-2 h-4 w-4" /> Read More
                         </Button>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </CarouselItem>
               ))}
             </CarouselContent>
