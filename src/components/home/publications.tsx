@@ -65,8 +65,9 @@ export function Publications() {
             Publications & Research Highlights
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A selection of my published scientific papers and contributions to
-            the field, presented in a digital art gallery format. Click on any paper to read more.
+            A selection (40) of my co-authored and published scientific papers
+            (60+) and contributions to the field, presented in a digital art
+            gallery format. Click on any paper to read more.
           </p>
         </div>
 
@@ -94,14 +95,16 @@ export function Publications() {
                   style={{
                     ...(tweenValues.length && {
                       transform: `
-                        rotateY(${(tweenValues[index] - 1) * 25}deg) 
+                        rotateY(${(tweenValues[index] - 1) * 25}deg)
                         scale(${1 - Math.abs((tweenValues[index] - 1) * 0.15)})
                         translateZ(${Math.abs(tweenValues[index] - 1) * -50}px)
                         translateX(${(tweenValues[index] - 1) * -20}px)
                       `,
                       filter: `blur(${Math.abs(tweenValues[index] - 1) * 2}px) brightness(${1 - Math.abs((tweenValues[index] - 1) * 0.3)})`,
                       transformStyle: "preserve-3d",
-                      zIndex: Math.round((1 - Math.abs(tweenValues[index] - 1)) * 10),
+                      zIndex: Math.round(
+                        (1 - Math.abs(tweenValues[index] - 1)) * 10,
+                      ),
                       opacity: Math.abs(tweenValues[index] - 1) > 0.8 ? 0.3 : 1,
                     }),
                   }}
@@ -120,7 +123,6 @@ export function Publications() {
                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent transition-all duration-300 group-hover:from-black/60 group-hover:to-black/20 group-hover:backdrop-blur-sm" />
-
 
                       <div className="absolute inset-0 flex translate-y-4 flex-col items-center justify-center p-4 text-center text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <h3 className="font-headline text-xl font-bold">
@@ -142,7 +144,11 @@ export function Publications() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild variant="outline" className="bg-accent-600 text-white border-accent-600 hover:bg-accent-950 hover:text-white">
+          <Button
+            asChild
+            variant="outline"
+            className="bg-accent-600 text-white border-accent-600 hover:bg-accent-950 hover:text-white"
+          >
             <Link href="/publications">View All Publications</Link>
           </Button>
         </div>

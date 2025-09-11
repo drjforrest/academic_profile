@@ -1,8 +1,8 @@
 Vercel CLI 47.0.7
 Retrieving project…
 Deploying drjforrests-projects/academic-profile
-Inspect: https://vercel.com/drjforrests-projects/academic-profile/8HcucTQQW6g1TDKvVd1bspiUJ9Kv [2s]
-Production: https://academic-profile-l99nptw64-drjforrests-projects.vercel.app [2s]
+Inspect: https://vercel.com/drjforrests-projects/academic-profile/FxgMhkG9Amj7Hn52rA9L1V7nRzmt [2s]
+Production: https://academic-profile-mcwtlhft2-drjforrests-projects.vercel.app [2s]
 Queued
 Building
 Completing

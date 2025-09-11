@@ -16,7 +16,16 @@ export function Research() {
             Research Mission
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            My research spans across projects that examine how<strong> digital technologies can be deliberately designed, adapted, and governed,</strong> to improve health outcomes and promote health equity. Leveraging strengths in global health partnerships for interdisciplinary inquiry, I investigate three interconnected challenges that emerge when digital innovation disrupts conventional health research, methods, and practice norms.
+            My research spans several interdisciplinary projects that examine
+            how
+            <strong>
+              {" "}
+              digital technologies are designed, adapted, and governed,
+            </strong>{" "}
+            to improve health outcomes and promote health equity. Leveraging
+            strengths in global health partnerships for interdisciplinary
+            inquiry, I investigate interconnected challenges and solutions where
+            digital innovation is both the contagion and the cure.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -69,8 +78,9 @@ export function Research() {
             </CardHeader>
             <CardContent className="flex-1">
               <CardDescription className="text-md">
-                Designing and operationally implementing adaptive platform trial methods in partnerships to accelerate
-                evidence generation when it matters most.
+                Designing and operationally implementing adaptive platform trial
+                methods in partnerships to accelerate evidence generation when
+                it matters most.
               </CardDescription>
             </CardContent>
           </Card>
@@ -104,9 +114,10 @@ export function Research() {
               </div>
             </CardHeader>
             <CardContent className="flex-1">
-              <CardDescription className="text-md"> 
-                Studying the impacts of digital misinformation, particularly during health emergencies, on public health
-                trust, especially for marginalized groups.
+              <CardDescription className="text-md">
+                Studying the impacts of digital misinformationduring health
+                emergencies, on public health trust, especially for marginalized
+                groups.
               </CardDescription>
             </CardContent>
           </Card>
@@ -123,8 +134,8 @@ export function Research() {
             </CardHeader>
             <CardContent className="flex-1">
               <CardDescription className="text-md">
-                Analyzing global power, access, and control in digital health,
-                to center local voices and priorities.
+                Analyzing global power, access, and control of digital health
+                data, to center local voices and priorities.
               </CardDescription>
             </CardContent>
           </Card>

@@ -30,10 +30,8 @@ export function GlobalHealthFocus() {
               Global Health Leadership
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              A global health researcher and strategy leader advancing
-              technology and equity in health emergency response across Africa,
-              North America, and beyond. My work bridges research, policy, and
-              practice to build resilient health systems.
+              A global health researcher and strategy leader with a particular
+              interest in health technology innovation.
             </p>
             <div className="mt-6 space-y-4">
               <div>
@@ -41,10 +39,11 @@ export function GlobalHealthFocus() {
                   Current Focus
                 </h3>
                 <p className="text-muted-foreground">
-                  I am current a Postdoctoral Research Fellow investigating digital
-                  misinformation, AI governance, and information integrity at
-                  UBC's Health Emergencies and Resiliency in Outbreaks (HERO)
-                  Lab in the School of Nursing, Faculty of Applied Science working with Dr. Meaghan Thumath.
+                  I am currently a Postdoctoral Research Fellow investigating
+                  digital misinformation, AI governance, and information
+                  integrity at UBC's Health Emergencies and Resiliency in
+                  Outbreaks (HERO) Lab in the School of Nursing, Faculty of
+                  Applied Science working with Dr. Meaghan Thumath.
                 </p>
               </div>
               <div>
@@ -55,29 +54,46 @@ export function GlobalHealthFocus() {
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary-100 border-l-4 border-l-primary-600 shadow-sm">
                     <div className="w-3 h-3 rounded-full bg-primary-600 mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-base text-foreground">Chief Partnerships Officer, Platform Life Sciences</p>
-                      <p className="text-sm text-muted-foreground mt-1">Executive Director of the TOGETHER Trial Consortium</p>
+                      <p className="font-semibold text-base text-foreground">
+                        Chief Partnerships Officer, Platform Life Sciences
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Executive Director of the TOGETHER Trial Consortium
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary-100 border-l-4 border-l-accent-600 shadow-sm">
                     <div className="w-3 h-3 rounded-full bg-accent-600 mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-base text-foreground">Managing Director, MTEK Sciences East Africa</p>
-                      <p className="text-sm text-muted-foreground mt-1">Advisor to Ministry of Health of Rwanda, Data Science for Decision-making</p>
+                      <p className="font-semibold text-base text-foreground">
+                        Managing Director, MTEK Sciences East Africa
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Advisor to Ministry of Health of Rwanda, Data Science
+                        for Decision-making
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary-100 border-l-4 border-l-jungle-600 shadow-sm">
                     <div className="w-3 h-3 rounded-full bg-jungle-600 mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-base text-foreground">Research & Strategy Lead, Purpose Africa</p>
-                      <p className="text-sm text-muted-foreground mt-1">Developing pan-African clinical research capacity</p>
+                      <p className="font-semibold text-base text-foreground">
+                        Research & Strategy Lead, Purpose Africa
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Developing pan-African clinical research capacity
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary-100 border-l-4 border-l-eggplant-600 shadow-sm">
                     <div className="w-3 h-3 rounded-full bg-eggplant-600 mt-2 flex-shrink-0"></div>
                     <div>
-                      <p className="font-semibold text-base text-foreground">Scientific Director</p>
-                      <p className="text-sm text-muted-foreground mt-1">African AI Innovation Ecosystem Network</p>
+                      <p className="font-semibold text-base text-foreground">
+                        Scientific Director
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        African AI Innovation Ecosystem Research Network
+                      </p>
                     </div>
                   </div>
                 </div>
