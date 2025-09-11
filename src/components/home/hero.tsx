@@ -25,7 +25,7 @@ export function Hero() {
           </p>
           <div className="mt-10 flex gap-4 justify-center md:justify-start flex-col sm:flex-row">
             <Button asChild size="lg" variant="hero" className="min-w-48">
-              <Link href="/research">Discover My Research</Link>
+              <Link href="/about">Learn About Me</Link>
             </Button>
             <Button
               asChild
