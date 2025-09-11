@@ -9,7 +9,7 @@ export function GlobalHealthFocus() {
             <div className="space-y-4">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/images/earth-1.PNG"
+                  src="/images/earth-1.png"
                   alt="Global health technology network visualization"
                   fill
                   className="object-cover"
@@ -17,7 +17,7 @@ export function GlobalHealthFocus() {
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/images/earth-2.PNG"
+                  src="/images/earth-2.png"
                   alt="Technology embedded futuristic earth from space"
                   fill
                   className="object-cover"
