@@ -17,8 +17,8 @@ export function BlogSection() {
               <p className="text-lg text-muted-foreground mb-6">
                 In this rapidly evolving digital age, Artificial Intelligence
                 (AI) is transforming every facet of our lives, and healthcare is
-                no exception. As an academic invested in the societal and public
-                health impact of these remarkableinnovations, I'm askingn the
+                no exception. As an academic investigating the public
+                health side of AI in its many forms, I'm asking the
                 critical question:{" "}
                 <strong>
                   Who benefits from this revolution, and who might be left
@@ -27,12 +27,11 @@ export function BlogSection() {
               </p>
               <p className="text-muted-foreground">
                 Mind the Gap is a space to explore the fascinating, often
-                complex, and sometimes unsettling intersection of AI and digital
+                complex, and sometimes unsettling intersection of AI and
                 health, always with a sharp focus on equity. It discusses how
                 these powerful technologies can either bridge or widen existing
-                health disparities, examining the challenges of algorithmic
-                bias, the digital divide, data privacy and sovereignty, and
-                equitable access.
+                disparities, examining the challenges of algorithmic
+                bias, the growing digital divide, equitable access, and data privacy and sovereignty.
               </p>
               <div className="mt-6">
                 <Button asChild size="lg" variant="white-card">
@@ -46,7 +45,7 @@ export function BlogSection() {
               <p className="text-muted-foreground">
                 Most importantly, Mind the Gap spotlights innovative solutions,
                 ethical frameworks, and practical policy considerations that can
-                ensure AI truly serves everyone.
+                helpensure AI truly serves everyone.
               </p>
               <p className="text-muted-foreground mb-6">
                 Through historical analysis, contemporary case studies, and
