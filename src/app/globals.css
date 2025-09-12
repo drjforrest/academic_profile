@@ -137,8 +137,8 @@
   --color-chart-5: #fffbfe; /* Snow */
   
   /* Font Family */
-  --font-family-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-family-headline: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-family-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-family-headline: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Base Styles */

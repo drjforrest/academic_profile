@@ -312,7 +312,7 @@ const DEIProposalWizard = () => {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-4">
-          <FileText className="w-6 h-6 text-blue-600" />
+          <FileText className="w-6 h-6 text-accent-950" />
           <h1 className="text-2xl font-bold text-gray-900">DEI Proposal Assistant</h1>
         </div>
         <p className="text-gray-600 mb-4">
@@ -324,7 +324,7 @@ const DEIProposalWizard = () => {
         {/* Progress bar */}
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div 
-            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+            className="bg-accent-950 h-2 rounded-full transition-all duration-300"
             style={{ width: `${progressPercentage}%` }}
           />
         </div>
@@ -337,7 +337,7 @@ const DEIProposalWizard = () => {
       {currentStep < sections.length ? (
         <div className="space-y-6">
           <div className="flex items-center gap-3 mb-6">
-            <currentSection.icon className="w-8 h-8 text-blue-600" />
+            <currentSection.icon className="w-8 h-8 text-accent-950" />
             <h2 className="text-xl font-semibold text-gray-900">{currentSection.title}</h2>
           </div>
 
@@ -379,7 +379,7 @@ const DEIProposalWizard = () => {
                     <textarea
                       value={responses[question.id]?.followUp || ''}
                       onChange={(e) => updateResponse(question.id, responses[question.id]?.answer || '', e.target.value)}
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-accent-950 focus:border-accent-950"
                       rows={3}
                       placeholder="Provide details here..."
                     />
@@ -409,7 +409,7 @@ const DEIProposalWizard = () => {
                 }
               }}
               disabled={!canProceed}
-              className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-6 py-2 bg-accent-950 text-white rounded-md hover:bg-accent-900 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLastStep ? 'Generate Text' : 'Next'}
               {!isLastStep && <ChevronRight className="w-4 h-4" />}
@@ -428,7 +428,7 @@ const DEIProposalWizard = () => {
               <button
                 onClick={generateProposalText}
                 disabled={isGenerating}
-                className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 flex items-center gap-2 mx-auto"
+                className="px-6 py-3 bg-accent-950 text-white rounded-md hover:bg-accent-900 disabled:opacity-50 flex items-center gap-2 mx-auto"
               >
                 {isGenerating ? 'Generating...' : 'Generate Proposal Text'}
                 <Send className="w-4 h-4" />

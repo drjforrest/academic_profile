@@ -34,7 +34,7 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <h4 className="font-semibold">Legal</h4>
               <Link
-                href="#"
+                href="/privacy"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
                 Privacy Policy
