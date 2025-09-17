@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 const expertise = [
   "Global Health",
+  "Clinical Research Operations",
   "Digital Innovation",
   "Network Analysis",
   "AI in Healthcare",
@@ -57,7 +58,7 @@ export default function AboutPage() {
                 </h3>
                 <div className="prose prose-lg mt-4 max-w-none text-muted-foreground dark:prose-invert">
                   <p>
-                    My research examines how digital technologies can be deliberately designed, adapted, and governed to minimize health disparities and promote health equity. Leveraging strengths in global health partnerships for interdisciplinary inquiry, I investigate three interconnected challenges that emerge when digital innovation disrupts conventional health research, methods, and practice norms.
+                    My research examines how digital technologies can be deliberately designed, adapted, and governed to minimize health disparities and promote health equity. Leveraging strengths in global health partnerships for interdisciplinary inquiry, I investigate interconnected challenges that emerge when digital innovation disrupts conventional health research, methods, and practice norms.
                   </p>
                   <p>
                     My research is grounded in a commitment to equity and local agency, evolving from community-driven biomedical and socio-behavioural studies among gay and bisexual men to the pragmatic analysis of global health innovation and information systems. With foundational training in quantitative public health methods, I have consistently sought to center research questions around the lived realities and priorities of marginalized communities, ensuring that evidence not only meets scientific standards, but also meaningfully serves those it is intended to benefit. Years spent embedded with Rwanda's Ministry of Health, co-developing and scaling digital health information systems, provided deeper insights into the intersection of technology, data sovereignty, and sustainable innovation in resource-limited settings.
