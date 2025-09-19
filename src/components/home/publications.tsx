@@ -65,8 +65,8 @@ export function Publications() {
             Publications & Research Highlights
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A selection (40) of my co-authored and published scientific papers
-            (60+) and contributions to the field, presented in a digital art
+            A comprehensive collection of my co-authored and published scientific papers
+            and contributions to the field, presented in a digital art
             gallery format. Click on any paper to read more.
           </p>
         </div>

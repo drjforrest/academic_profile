@@ -43,18 +43,18 @@
   --color-accent-950: #4281a4;
 
   /* Additional Palette Colors */
-  /* Eggplant (#4d2d3c) */
-  --color-eggplant-50: #fdf4ff;
-  --color-eggplant-100: #fae8ff;
-  --color-eggplant-200: #f5d0fe;
-  --color-eggplant-300: #f0abfc;
-  --color-eggplant-400: #e879f9;
-  --color-eggplant-500: #d946ef;
-  --color-eggplant-600: #c026d3;
-  --color-eggplant-700: #a21caf;
-  --color-eggplant-800: #86198f;
-  --color-eggplant-900: #4d2d3c;
-  --color-eggplant-950: #4d2d3c;
+  /* Red (#F62A15) */
+  --color-eggplant-50: #fef2f2;
+  --color-eggplant-100: #fee2e2;
+  --color-eggplant-200: #fecaca;
+  --color-eggplant-300: #fca5a5;
+  --color-eggplant-400: #f87171;
+  --color-eggplant-500: #F62A15;
+  --color-eggplant-600: #dc2626;
+  --color-eggplant-700: #b91c1c;
+  --color-eggplant-800: #991b1b;
+  --color-eggplant-900: #7f1d1d;
+  --color-eggplant-950: #F62A15;
 
   /* Jungle Green (#49a078) */
   --color-jungle-50: #f0fdf4;
@@ -133,7 +133,7 @@
   --color-chart-1: #03312e; /* Dark green */
   --color-chart-2: #4281a4; /* Cerulean */
   --color-chart-3: #49a078; /* Jungle green */
-  --color-chart-4: #4d2d3c; /* Eggplant */
+  --color-chart-4: #F62A15; /* Red */
   --color-chart-5: #fffbfe; /* Snow */
   
   /* Font Family */
