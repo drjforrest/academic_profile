@@ -6,6 +6,11 @@ export const NAV_LINKS = [
     label: "Publications",
     description: "Scholarly work",
   },
+  {
+    href: "/research-network",
+    label: "Research Network",
+    description: "Interactive citation visualization",
+  },
   { href: "/dei-tool", label: "DEI Tool", description: "Proposal assistant" },
   { href: "https://blog.drjforrest.com", label: "Blog", description: "AI, Digital Health, and Equity" },
   { href: "/contact", label: "Contact", description: "Get in touch" },
