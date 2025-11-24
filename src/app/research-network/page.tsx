@@ -21,6 +21,7 @@ export default function ResearchNetworkPage() {
   const [selectedPaper, setSelectedPaper] = useState<Paper | null>(null);
   const [scholarUrl, setScholarUrl] = useState('');
   const [customLoading, setCustomLoading] = useState(false);
+  const [hasGeneratedInSession, setHasGeneratedInSession] = useState(false);
 
   useEffect(() => {
     async function loadData() {
@@ -43,11 +44,15 @@ export default function ResearchNetworkPage() {
       }
     }
 
+    // Check if user has already generated a network in this session
+    const hasGenerated = sessionStorage.getItem('hasGeneratedNetwork') === 'true';
+    setHasGeneratedInSession(hasGenerated);
+
     loadData();
   }, []);
 
   const handleGenerateNetwork = async () => {
-    if (!scholarUrl.trim()) return;
+    if (!scholarUrl.trim() || hasGeneratedInSession) return;
     
     try {
       setCustomLoading(true);
@@ -72,6 +77,10 @@ export default function ResearchNetworkPage() {
       const networkData = await response.json();
       setData(networkData);
       setSelectedCluster(null);
+      
+      // Mark that user has generated a network in this session
+      sessionStorage.setItem('hasGeneratedNetwork', 'true');
+      setHasGeneratedInSession(true);
     } catch (err) {
       // Check if it's a connection error
       if (err instanceof TypeError || err instanceof DOMException && err.name === 'AbortError') {
@@ -191,51 +200,6 @@ export default function ResearchNetworkPage() {
             Interactive visualization of {data.metadata.total_papers} papers with {data.metadata.total_citations.toLocaleString()} total citations, 
             clustered by research topic using ML
           </p>
-          
-          {/* Google Scholar Input */}
-          <div className="mt-8 max-w-2xl mx-auto">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="font-headline text-accent-950 text-lg">Generate Any Scholar's Network</CardTitle>
-                <CardDescription className="text-sm">
-                  Enter a Google Scholar profile URL to visualize any researcher's citation network
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-2">
-                  <Input
-                    type="text"
-                    placeholder="https://scholar.google.com/citations?user=AUTHOR_ID or just AUTHOR_ID"
-                    value={scholarUrl}
-                    onChange={(e) => setScholarUrl(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleGenerateNetwork()}
-                    disabled={customLoading}
-                    className="flex-1"
-                  />
-                  <Button 
-                    onClick={handleGenerateNetwork}
-                    disabled={customLoading || !scholarUrl.trim()}
-                    className="min-w-[120px]"
-                  >
-                    {customLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
-                      </>
-                    ) : (
-                      <>
-                        <Search className="mr-2 h-4 w-4" />
-                        Generate
-                      </>
-                    )}
-                  </Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Example: https://scholar.google.com/citations?user=YOUR_ID or just YOUR_ID
-                </p>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
@@ -380,6 +344,77 @@ export default function ResearchNetworkPage() {
               </div>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Try It Yourself Section */}
+      <section className="bg-secondary">
+        <div className="container">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl text-primary-950 font-bold font-headline tracking-tight">
+              Now You Try
+            </h3>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Want to see your own citation network? Enter your Google Scholar profile below to generate an interactive visualization of your research.
+            </p>
+          </div>
+          
+          <div className="max-w-2xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="font-headline text-accent-950 text-lg">Generate Your Citation Network</CardTitle>
+                <CardDescription className="text-sm">
+                  Enter your Google Scholar profile URL or author ID
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {hasGeneratedInSession ? (
+                  <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
+                    <p className="text-sm text-blue-900 font-medium mb-2">
+                      ✓ Network Generated
+                    </p>
+                    <p className="text-sm text-blue-700">
+                      You've already generated a citation network in this session. To try another profile, please refresh your browser or open a new tab.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex gap-2">
+                      <Input
+                        type="text"
+                        placeholder="https://scholar.google.com/citations?user=AUTHOR_ID or just AUTHOR_ID"
+                        value={scholarUrl}
+                        onChange={(e) => setScholarUrl(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleGenerateNetwork()}
+                        disabled={customLoading}
+                        className="flex-1"
+                      />
+                      <Button 
+                        onClick={handleGenerateNetwork}
+                        disabled={customLoading || !scholarUrl.trim()}
+                        className="min-w-[120px]"
+                      >
+                        {customLoading ? (
+                          <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Generating...
+                          </>
+                        ) : (
+                          <>
+                            <Search className="mr-2 h-4 w-4" />
+                            Generate
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Example: https://scholar.google.com/citations?user=abc123 or just abc123
+                    </p>
+                  </>
+                )}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
