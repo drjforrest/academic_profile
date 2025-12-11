@@ -17,7 +17,7 @@ export function Hero() {
       <div className="container relative z-10 flex h-full items-center">
         <div className="max-w-2xl text-center md:text-left">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl leading-tight">
-            Technology, Adaptation, Equity in Global Health Research & Practice
+            Technology and Equity in Global Health Research & Practice
           </h1>
           <p className="mt-6 text-lg text-slate-200 leading-relaxed max-w-lg">
             Investigating disruptive, digital innovations to minimize their
