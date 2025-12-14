@@ -36,6 +36,25 @@ export function Research() {
                   <Shield className="h-10 w-10 text-accent-950" />
                 </div>
                 <CardTitle className="font-headline text-accent-950 text-xl">
+                  Misinformation & Information Integrity
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-1">
+              <CardDescription className="text-md">
+                Building multimodal AI systems to detect health misinformation
+                and studying its impacts on public health trust, especially
+                during emergencies.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Lightbulb className="h-10 w-10 text-accent-950" />
+                </div>
+                <CardTitle className="font-headline text-accent-950 text-xl">
                   AI Governance & Digital Equity
                 </CardTitle>
               </div>
@@ -44,6 +63,24 @@ export function Research() {
               <CardDescription className="text-md">
                 Advancing practices and protections so artificial intelligence
                 drives equitable health outcomes—especially in emergencies.
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="flex flex-col hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Globe className="h-10 w-10 text-accent-950" />
+                </div>
+                <CardTitle className="font-headline text-accent-950 text-xl">
+                  Technology Equity & Data Sovereignty
+                </CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="flex-1">
+              <CardDescription className="text-md">
+                Analyzing global power, access, and control of digital health
+                data, to center local voices and priorities.
               </CardDescription>
             </CardContent>
           </Card>
@@ -69,10 +106,10 @@ export function Research() {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Lightbulb className="h-10 w-10 text-accent-950" />
+                  <Shield className="h-10 w-10 text-accent-950" />
                 </div>
                 <CardTitle className="font-headline text-accent-950 text-xl">
-                  Resilient Clinical Research Opereations & Infrastructure
+                  Resilient Clinical Research Operations
                 </CardTitle>
               </div>
             </CardHeader>
@@ -99,43 +136,6 @@ export function Research() {
               <CardDescription className="text-md">
                 Using participatory, iterative methods to authentically engage
                 and empower communities in health innovation.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="flex flex-col hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Shield className="h-10 w-10 text-accent-950" />
-                </div>
-                <CardTitle className="font-headline text-accent-950 text-xl">
-                  Misinformation & Information Integrity
-                </CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <CardDescription className="text-md">
-                Studying the impacts of digital misinformationduring health
-                emergencies, on public health trust, especially for marginalized
-                groups.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="flex flex-col hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                  <Globe className="h-10 w-10 text-accent-950" />
-                </div>
-                <CardTitle className="font-headline text-accent-950 text-xl">
-                  Technology Equity & Data Sovereignty
-                </CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <CardDescription className="text-md">
-                Analyzing global power, access, and control of digital health
-                data, to center local voices and priorities.
               </CardDescription>
             </CardContent>
           </Card>

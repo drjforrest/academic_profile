@@ -2,6 +2,11 @@ export const NAV_LINKS = [
   { href: "/", label: "Home", description: "Welcome & overview" },
   { href: "/about", label: "About", description: "Background & experience" },
   {
+    href: "/projects",
+    label: "Projects",
+    description: "Current AI & health projects",
+  },
+  {
     href: "/publications",
     label: "Publications",
     description: "Scholarly work",
@@ -18,16 +23,16 @@ export const NAV_LINKS = [
 
 export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/in/jamie-forrest",
-  orcid: "https://orcid.org/0000-0002-8900-7350", // Update with actual ORCID
+  orcid: "https://orcid.org/0000-0002-8900-7350",
   github: "https://github.com/drjforrest",
-  scholar: "https://scholar.google.com/citations?user=iHagz9UAAAAJ&hl=en&inst=17001591832933267808", // Update with actual Google Scholar profile
+  scholar: "https://scholar.google.com/citations?user=iHagagz9UAAAAJ&hl=en&inst=17001591832933267808",
 };
 
 export const SITE_INFO = {
   name: "Dr. Jamie Forrest",
-  title: "Global Health Researcher & Digital Innovation Leader",
+  title: "AI Researcher & Digital Health Innovation Leader",
   shortName: "Jamie Forrest",
   tagline: "PhD, MPH",
   description:
-    "Global health researcher advancing technology and equity in health emergency response across Africa, North America, and beyond.",
+    "Applied data scientist building AI systems for health misinformation detection and digital health equity.",
 };

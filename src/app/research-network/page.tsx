@@ -62,7 +62,7 @@ export default function ResearchNetworkPage() {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
       
-      const response = await fetch(`https://api.taifa-fiala.net/api/generate-network?author_id=${encodeURIComponent(scholarUrl)}`, {
+      const response = await fetch(`https://citation-network.drjforrest.com/api/generate-network?author_id=${encodeURIComponent(scholarUrl)}`, {
         method: 'POST',
         signal: controller.signal,
       });

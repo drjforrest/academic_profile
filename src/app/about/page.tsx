@@ -1,12 +1,15 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Sparkles, Shield, Lightbulb } from "lucide-react";
 
 const expertise = [
+  "AI in Healthcare",
+  "Misinformation Detection",
+  "Digital Innovation",
   "Global Health",
   "Clinical Research Operations",
-  "Digital Innovation",
   "Network Analysis",
-  "AI in Healthcare",
   "Capacity Building",
   "Cross-Continental Partnerships",
   "Health Equity",
@@ -51,12 +54,45 @@ export default function AboutPage() {
               </div>
               <div className="md:col-span-2">
                 <h2 className="font-headline text-2xl font-semibold">
-                  Technology, Adaptation, and Equity in Global Health Research & Practice
+                  AI, Misinformation & Digital Equity in Health
                 </h2>
                 <h3 className="mt-2 text-lg font-medium text-primary">
-                  Optimizing disruptive, digital innovation to minimize health disparities
+                  Building multimodal AI systems to detect misinformation and advance health equity
                 </h3>
-                <div className="prose prose-lg mt-4 max-w-none text-muted-foreground dark:prose-invert">
+                
+                {/* Current Focus Card */}
+                <Card className="mt-6 bg-gradient-to-br from-accent-50 to-primary-50 border-accent-200">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="flex items-center gap-2 text-accent-950 font-headline">
+                      <Sparkles className="h-5 w-5 text-accent-600" />
+                      Current Focus
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Shield className="h-5 w-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">MedContext</p>
+                        <p className="text-sm text-muted-foreground">
+                          Agentic AI for medical misinformation detection. Submitted to Kaggle MedGemma Impact Challenge 
+                          with 91% accuracy using contextual authenticity analysis.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Lightbulb className="h-5 w-5 text-primary-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-foreground">Counterforce AI</p>
+                        <p className="text-sm text-muted-foreground">
+                          UBC Founder Venture developing AI-powered misinformation detection 
+                          and reputation management tools for organizations.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="prose prose-lg mt-6 max-w-none text-muted-foreground dark:prose-invert">
                   <p>
                     My research examines how digital technologies can be deliberately designed, adapted, and governed to minimize health disparities and promote health equity. Leveraging strengths in global health partnerships for interdisciplinary inquiry, I investigate interconnected challenges that emerge when digital innovation disrupts conventional health research, methods, and practice norms.
                   </p>

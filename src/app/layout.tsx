@@ -14,10 +14,10 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dr Jamie Forrest PhD, MPH - Academic Profile",
+  title: "Dr Jamie Forrest PhD, MPH - AI & Digital Health Research",
   description:
-    "Dr Jamie Forrest PhD, MPH is a academic and researcher in the field of global health, with a particular interest in digital innovation. With a passion for improving health outcomes, he has dedicated his career to advancing knowledge and promoting evidence-based practices. His academic profile showcases his research contributions, publications, and collaborations with leading institutions worldwide.",
-  metadataBase: new URL('https://drjforrest.com'),
+    "Dr Jamie Forrest is an applied data scientist and postdoctoral researcher building AI systems for health misinformation detection and digital health equity at UBC.",
+  metadataBase: new URL("https://drjforrest.com"),
 };
 
 export default function RootLayout({

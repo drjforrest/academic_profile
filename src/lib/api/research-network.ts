@@ -12,7 +12,7 @@ import type {
 } from '@/lib/types/research-network';
 
 // Get API URL from environment, fallback to production for development
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.taifa-fiala.net';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://citation-network.drjforrest.com';
 
 /**
  * Custom error class for backend connectivity issues

@@ -7,7 +7,7 @@ export function Hero() {
     <section className="hero-section relative h-[60vh] min-h-[500px] md:h-[70vh]">
       <Image
         src="/images/hero-new.png"
-        alt="Global connectivity network visualization with digital pathways"
+        alt="Digital network visualization representing AI and information systems"
         fill
         className="object-cover"
         priority
@@ -17,15 +17,15 @@ export function Hero() {
       <div className="container relative z-10 flex h-full items-center">
         <div className="max-w-2xl text-center md:text-left">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl leading-tight">
-            Technology and Equity in Global Health Research & Practice
+            AI Systems for Health Misinformation & Digital Equity
           </h1>
           <p className="mt-6 text-lg text-slate-200 leading-relaxed max-w-lg">
-            Investigating disruptive, digital innovations to minimize their
-            impact on health disparities
+            Building multimodal AI tools to detect misinformation and advance
+            health equity through applied data science and digital innovation.
           </p>
           <div className="mt-10 flex gap-4 justify-center md:justify-start flex-col sm:flex-row">
             <Button asChild size="lg" variant="hero" className="min-w-48">
-              <Link href="/about">Learn About Me</Link>
+              <Link href="/projects">View Projects</Link>
             </Button>
             <Button
               asChild
@@ -33,7 +33,7 @@ export function Hero() {
               variant="hero-outline"
               className="min-w-48"
             >
-              <Link href="/contact">Collaborate</Link>
+              <Link href="/about">About Me</Link>
             </Button>
           </div>
         </div>

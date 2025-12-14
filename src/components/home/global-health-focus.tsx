@@ -27,28 +27,37 @@ export function GlobalHealthFocus() {
           </div>
           <div className="order-1 md:order-2">
             <h2 className="font-headline text-5xl text-primary-950 font-bold tracking-tight">
-              Global Health Leadership
+              Research & Experience
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              A global health researcher and strategy leader with a particular
-              interest in health technology innovation.
+              Applied data scientist and global health researcher building AI systems 
+              to address health misinformation and advance digital equity.
             </p>
             <div className="mt-6 space-y-4">
-              <div>
-                <h3 className="font-semibold text-foreground mb-2">
+              <div className="bg-accent-50 rounded-lg p-5 border-l-4 border-accent-600">
+                <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-accent-600"></span>
                   Current Focus
                 </h3>
                 <p className="text-muted-foreground">
-                  I am currently a Postdoctoral Research Fellow investigating
-                  digital misinformation, AI governance, and information
-                  integrity at UBC's Health Emergencies and Resiliency in
-                  Outbreaks (HERO) Lab in the School of Nursing, Faculty of
-                  Applied Science working with Dr. Meaghan Thumath.
+                  Postdoctoral Research Fellow at UBC's Health Emergencies and Resiliency in
+                  Outbreaks (HERO) Lab, investigating digital misinformation, AI governance, 
+                  and information integrity. Building production-grade AI systems including:
                 </p>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent-600 font-semibold">→</span>
+                    <span><strong>MedContext:</strong> Multimodal AI for health misinformation detection (Kaggle MedGemma submission)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent-600 font-semibold">→</span>
+                    <span><strong>Counterforce AI:</strong> Early-stage venture for misinformation detection & reputation management</span>
+                  </li>
+                </ul>
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-4">
-                  Past Professional Experience Highlights
+                  Previous Experience
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 p-4 rounded-lg bg-secondary-100 border-l-4 border-l-primary-600 shadow-sm">

@@ -1,9 +1,1 @@
-Vercel CLI 47.0.7
-Retrieving project…
-Deploying drjforrests-projects/academic-profile
-Uploading [--------------------] (0.0B/5KB)
-Uploading [====================] (5.0KB/5KB)
-Inspect: https://vercel.com/drjforrests-projects/academic-profile/D48yuvU2KYNo6GKacrXqjEKDip9X [3s]
-Production: https://academic-profile-57bkonc9j-drjforrests-projects.vercel.app [3s]
-Queued
-Building
+./deployDomain.sh: line 4: vercel: command not found
