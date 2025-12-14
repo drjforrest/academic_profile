@@ -3,12 +3,13 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Rss, Calendar } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { fetchBlogFeed, fallbackBlogData } from "@/lib/blog-feed";
 
 export async function BlogSection() {
   // Fetch the latest blog posts
   const blogFeed = await fetchBlogFeed() || fallbackBlogData;
-  
+
   return (
     <section className="bg-secondary">
       <div className="container">
@@ -40,18 +41,27 @@ export async function BlogSection() {
                 disparities, examining the challenges of algorithmic
                 bias, the growing digital divide, equitable access, and data privacy and sovereignty.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Button asChild size="lg" variant="white-card">
                   <Link href="https://blog.drjforrest.com" target="_blank">
                     Visit Mind the Gap
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
+                <Button asChild size="lg" variant="outline" className="border-red-500 text-red-500 hover:bg-red-50 hover:text-red-700">
                   <Link href="https://blog.drjforrest.com/feed.xml" target="_blank">
                     <Rss className="mr-2 h-4 w-4" />
                     RSS Feed
                   </Link>
                 </Button>
+              </div>
+              <div className="my-6 flex justify-center">
+                <Image
+                  src="/images/mind-the-gap-logo.png"
+                  alt="Mind the Gap Logo"
+                  width={300}
+                  height={200}
+                  className="rounded-lg max-w-full h-auto"
+                />
               </div>
             </div>
             <div>
@@ -69,14 +79,14 @@ export async function BlogSection() {
                       day: 'numeric',
                       year: 'numeric'
                     });
-                    
+
                     return (
                       <Card key={index} className="hover:shadow-md transition-shadow">
                         <CardHeader className="pb-3">
                           <div className="flex items-start justify-between">
                             <CardTitle className="text-base font-semibold leading-tight pr-2">
-                              <Link 
-                                href={post.link} 
+                              <Link
+                                href={post.link}
                                 target="_blank"
                                 className="hover:text-primary transition-colors"
                               >
@@ -109,8 +119,8 @@ export async function BlogSection() {
                 </div>
               </div>
               <div className="text-center">
-                <Link 
-                  href="https://blog.drjforrest.com/archive" 
+                <Link
+                  href="https://blog.drjforrest.com/archive"
                   target="_blank"
                   className="text-sm text-primary hover:underline inline-flex items-center"
                 >

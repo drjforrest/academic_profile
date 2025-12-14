@@ -55,10 +55,10 @@ export function GlobalHealthFocus() {
                     <div className="w-3 h-3 rounded-full bg-primary-600 mt-2 flex-shrink-0"></div>
                     <div>
                       <p className="font-semibold text-base text-foreground">
-                        Chief Partnerships Officer, Platform Life Sciences
+                        Chief Partnerships Officer, Purpose Life Sciences
                       </p>
                       <p className="text-sm text-muted-foreground mt-1">
-                        Executive Director of the TOGETHER Trial Consortium
+                        Executive Director of the TOGETHER Adaptive Platform Trial Consortium
                       </p>
                     </div>
                   </div>

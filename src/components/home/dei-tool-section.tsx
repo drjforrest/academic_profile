@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export function DEIToolSection() {
@@ -30,9 +31,11 @@ export function DEIToolSection() {
               </p>
             </div>
             <div className="lg:w-1/2 flex justify-center">
-              <img
+              <Image
                 src="/images/contrasting-innovations.png"
                 alt="Contrasting Innovations"
+                width={500}  // Set appropriate width
+                height={300} // Set appropriate height
                 className="rounded-lg max-w-full h-auto"
               />
             </div>
