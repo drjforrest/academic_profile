@@ -40,18 +40,18 @@ export function GlobalHealthFocus() {
                   Current Focus
                 </h3>
                 <p className="text-muted-foreground">
-                  Postdoctoral Research Fellow at UBC's Health Emergencies and Resiliency in
-                  Outbreaks (HERO) Lab, investigating digital misinformation, AI governance, 
-                  and information integrity. Building production-grade AI systems including:
+                  Scientific Director at UBC's Health Equity & Resilience Observatory (HERO), 
+                  integrating crisis informatics and data science to create next-generation 
+                  intelligence for resilience. HERO innovations seed Counterforce AI:
                 </p>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-accent-600 font-semibold">→</span>
-                    <span><strong>MedContext:</strong> Multimodal AI for health misinformation detection (Kaggle MedGemma submission)</span>
+                    <span><strong>MedContext:</strong> Counterforce's first deployed product—91.4% accuracy in medical misinformation detection</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-600 font-semibold">→</span>
-                    <span><strong>Counterforce AI:</strong> Early-stage venture for misinformation detection & reputation management</span>
+                    <span><strong>Counterforce AI:</strong> Trust Defense as a Service (TDaaS) platform for real-time threat detection and response</span>
                   </li>
                 </ul>
               </div>

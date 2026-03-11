@@ -7,40 +7,53 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Sparkles, Shield, Database, FlaskConical, Globe, Users, Building2 } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, FlaskConical, Globe, Users, Building2, GraduationCap, Lightbulb, BarChart2 } from "lucide-react";
 import Link from "next/link";
 
 const featuredProjects = [
+  {
+    id: "hero-lab",
+    name: "HERO",
+    tagline: "Health Equity & Resilience Observatory | Scientific Director",
+    description:
+      "The Health Equity & Resilience Observatory at UBC transforms evidence into action—bringing together frontline clinical expertise, cutting-edge AI, and global health leadership. As Scientific Director, I integrate crisis informatics and data science to create next-generation intelligence for resilience. HERO innovations seed Counterforce AI.",
+    icon: GraduationCap,
+    tags: ["Trust & Crisis Intelligence", "Equity", "UBC"],
+    href: "https://nursing.herolab.ubc.ca",
+    external: true,
+  },
+  {
+    id: "counterforce",
+    name: "Counterforce AI",
+    tagline: "Trust Defense as a Service (TDaaS)",
+    description:
+      "Detects, maps, and responds to AI-amplified threats against institutional trust in real-time. A structural counter-industry response to the commercialized ecosystem of disinformation. MedContext, the platform's first deployed product, achieves 91.4% accuracy in detecting medical misinformation.",
+    icon: Shield,
+    tags: ["TDaaS", "Trust Defense", "AI/ML"],
+    href: "https://counterforce.tech",
+    external: true,
+    badge: "UBC Founder Venture",
+  },
+  {
+    id: "boreal-labs",
+    name: "Boreal Labs",
+    tagline: "Founder & Principal Scientist",
+    description:
+      "Private consulting, strategic guidance, and investment in global health, technology, and AI readiness.",
+    icon: Lightbulb,
+    tags: ["Consulting", "Strategic Advisory", "Investment"],
+    href: "https://boreal-labs.com",
+    external: true,
+  },
   {
     id: "medcontext",
     name: "MedContext",
     tagline: "Agentic AI for Medical Misinformation",
     description:
-      "Multimodal AI system achieving high accuracy in health misinformation detection through contextual authenticity analysis.",
+      "Counterforce AI's first deployed product. Multimodal detection achieving 91.4% accuracy in identifying medical misinformation—particularly authentic images paired with false claims—through contextual authenticity analysis.",
     icon: Sparkles,
     tags: ["AI/ML", "Kaggle", "Multimodal"],
     href: "/projects#medcontext",
-  },
-  {
-    id: "counterforce",
-    name: "Counterforce AI",
-    tagline: "Misinformation Detection & Reputation Management",
-    description:
-      "Early-stage venture helping organizations identify and mitigate digital misinformation before it spreads.",
-    icon: Shield,
-    tags: ["Startup", "SaaS", "AI/ML"],
-    href: "/projects#counterforce",
-    badge: "UBC Founder Venture",
-  },
-  {
-    id: "hero-library",
-    name: "HERO Evidence Library",
-    tagline: "Intelligent Bibliography Management",
-    description:
-      "Modern web application for research bibliography management with RAG-powered search and automated formatting.",
-    icon: Database,
-    tags: ["Next.js", "FastAPI", "RAG"],
-    href: "/projects#hero-library",
   },
 ];
 
@@ -56,14 +69,14 @@ const pastProjects = [
     href: "/projects#together-trial",
   },
   {
-    id: "rwanda-health-platform",
-    name: "Rwanda Health Analytics Platform",
-    tagline: "National Health Data Infrastructure",
+    id: "cytel",
+    name: "Cytel Canada Health",
+    tagline: "Director of Global Health Strategy",
     description:
-      "Led development of Rwanda's national health analytics infrastructure, building systems for real-time health data analysis and evidence-based policy making.",
-    icon: Globe,
-    tags: ["Health Systems", "Data Infrastructure", "Rwanda"],
-    href: "/projects#rwanda-health-platform",
+      "Developed web-based decision-support and data visualization tools for policymakers to model COVID-19 impacts and track global clinical trial progress. Delivered successful projects for the Bill & Melinda Gates Foundation, UNICEF, and Health Data Research UK.",
+    icon: BarChart2,
+    tags: ["Data Visualization", "Decision Support", "Policy"],
+    href: "/projects#cytel",
   },
   {
     id: "purpose-africa",
@@ -80,9 +93,9 @@ const pastProjects = [
     name: "Rwanda Biomedical Centre",
     tagline: "Data Science Advisor, Ministry of Health",
     description:
-      "Served as Data Science Advisor to the Rwanda Biomedical Centre within the Ministry of Health, providing technical guidance on health data systems and analytics.",
+      "Provided direct scientific and data analytic support to the Rwanda Biomedical Centre, including surveillance indicator configuration, data quality management, and routine reporting workflows. Supported national health systems including the Rwanda Health Analytics Platform (RHAP) and DHIS2-based surveillance.",
     icon: Building2,
-    tags: ["Policy Advisory", "Data Science", "Government"],
+    tags: ["Policy Advisory", "Data Science", "Government", "Rwanda"],
     href: "/projects#rwanda-biomedical-centre",
   },
 ];
@@ -98,8 +111,8 @@ export function ProjectsSection() {
               Current Projects
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Building production-grade AI systems at the intersection of health,
-              misinformation, and digital equity.
+              From research leadership and health systems to AI ventures and
+              digital tools — spanning surveillance, clinical trials, and capacity building.
             </p>
           </div>
           <Button asChild variant="outline" className="w-fit group">
@@ -110,7 +123,7 @@ export function ProjectsSection() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
           {featuredProjects.map((project) => (
             <Card
               key={project.id}
@@ -155,13 +168,25 @@ export function ProjectsSection() {
                 </div>
 
                 <Button variant="ghost" size="sm" asChild className="w-fit -ml-2">
-                  <Link
-                    href={project.href}
-                    className="flex items-center gap-1 text-primary"
-                  >
-                    Learn more
-                    <ArrowRight className="h-3 w-3" />
-                  </Link>
+                  {project.external ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-primary"
+                    >
+                      Learn more
+                      <ArrowRight className="h-3 w-3" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={project.href}
+                      className="flex items-center gap-1 text-primary"
+                    >
+                      Learn more
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  )}
                 </Button>
               </CardContent>
             </Card>

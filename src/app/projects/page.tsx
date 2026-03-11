@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Sparkles, Shield, Database, FlaskConical, Globe, Users, Building2 } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Shield, FlaskConical, Globe, Users, Building2, GraduationCap, Lightbulb, BarChart2 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
@@ -17,44 +17,48 @@ export const metadata = {
 
 const projects = [
   {
+    id: "hero-lab",
+    name: "HERO",
+    tagline: "Health Equity & Resilience Observatory | Scientific Director",
+    description:
+      "The Health Equity & Resilience Observatory (HERO) at UBC is dedicated to equity, trust, and resilience in crisis response. In times of crisis—from pandemics to climate emergencies—misinformation undermines trust in science and exacerbates health inequities. HERO brings together frontline clinical expertise, cutting-edge AI, and global health leadership to transform evidence into action. As Scientific Director, I integrate crisis informatics and data science to create next-generation intelligence for resilience. Research pillars: Trust & Crisis Intelligence (AI tools to detect and counter misinformation); Resilient & Equitable Health Systems; Equity-Driven Interventions. HERO innovations seed Counterforce AI—a unique pipeline from evidence to observatory insights to actionable systems deployed at scale.",
+    icon: GraduationCap,
+    tags: ["Trust & Crisis Intelligence", "Equity", "Resilience", "UBC"],
+    links: [{ label: "nursing.herolab.ubc.ca", href: "https://nursing.herolab.ubc.ca", icon: ExternalLink }],
+  },
+  {
+    id: "counterforce",
+    name: "Counterforce AI",
+    tagline: "Trust Defense as a Service (TDaaS)",
+    description:
+      "Counterforce AI is a Trust Defense as a Service (TDaaS) platform designed to detect, map, and respond to AI-amplified threats against institutional trust in real-time. It represents a structural counter-industry response to the commercialized ecosystem of disinformation. Trust in critical institutions—health systems, defense agencies, and emergency responders—is under systematic attack; generative AI has removed cost and skill barriers to industrialized misinformation campaigns. Traditional detection tools are retrospective; Counterforce addresses what to do before damage occurs. Three pillars: SEE (real-time multimodal detection—MedContext deployed at 91.4% accuracy for medical misinformation); MAP (graph neural network analysis of narrative spread, in development); ACT (operational response including pre-bunking and counter-messaging, in development).",
+    icon: Shield,
+    tags: ["TDaaS", "Trust Defense", "Real-time Detection"],
+    links: [{ label: "counterforce.tech", href: "https://counterforce.tech", icon: ExternalLink }],
+    badge: "UBC Founder Venture",
+  },
+  {
+    id: "boreal-labs",
+    name: "Boreal Labs",
+    tagline: "Founder & Principal Scientist",
+    description:
+      "Private consulting, strategic guidance, and investment in global health, technology, and AI readiness.",
+    icon: Lightbulb,
+    tags: ["Consulting", "Strategic Advisory", "Investment"],
+    links: [{ label: "boreal-labs.com", href: "https://boreal-labs.com", icon: ExternalLink }],
+  },
+  {
     id: "medcontext",
     name: "MedContext",
-    tagline: "Agentic AI for Medical Misinformation Detection",
+    tagline: "Counterforce AI's first deployed product",
     description:
-      "A multimodal AI system designed to detect health misinformation by jointly analyzing images and text. Submitted to the Kaggle MedGemma Impact Challenge, MedContext achieves high accuracy by evaluating contextual authenticity rather than content alone.",
+      "Multimodal detection across open and social sources, achieving 91.4% accuracy in detecting medical misinformation—particularly authentic images paired with false claims. Evaluates contextual authenticity rather than content alone. Submitted to the Kaggle MedGemma Impact Challenge. Powers the SEE (real-time detection) pillar of the Counterforce AI platform.",
     icon: Sparkles,
     tags: ["AI/ML", "Health Misinformation", "Kaggle", "Multimodal"],
     links: [
       { label: "Kaggle Submission", href: "https://kaggle.com", icon: ExternalLink },
       { label: "GitHub", href: "https://github.com/drjforrest/medcontext", icon: Github },
     ],
-    featured: true,
-  },
-  {
-    id: "counterforce",
-    name: "Counterforce AI",
-    tagline: "Early-Stage Misinformation Detection & Reputation Management",
-    description:
-      "Co-founded with Megan, Counterforce AI helps organizations identify and mitigate digital misinformation early. We combine modern AI/ML tools with strategic communications to protect client reputation in an era of information volatility.",
-    icon: Shield,
-    tags: ["Startup", "AI/ML", "SaaS", "Reputation Management"],
-    links: [{ label: "counterforce.tech", href: "https://counterforce.tech", icon: ExternalLink }],
-    badge: "UBC Founder Venture",
-    featured: false,
-  },
-  {
-    id: "hero-library",
-    name: "HERO Evidence Library",
-    tagline: "Intelligent Bibliography Management System",
-    description:
-      "A modern web application for managing research bibliographies with automated metadata extraction, RAG-powered search, and seamless reference formatting. Built for the HERO Lab to accelerate evidence synthesis.",
-    icon: Database,
-    tags: ["Next.js", "FastAPI", "PostgreSQL", "RAG"],
-    links: [
-      { label: "Live Demo", href: "#", icon: ExternalLink },
-      { label: "GitHub", href: "https://github.com/drjforrest/hero-library", icon: Github },
-    ],
-    featured: true,
   },
 ];
 
@@ -70,14 +74,14 @@ const pastProjects = [
     period: "2020-2023",
   },
   {
-    id: "rwanda-health-platform",
-    name: "Rwanda Health Analytics Platform",
-    tagline: "National Health Data Infrastructure",
+    id: "cytel",
+    name: "Cytel Canada Health",
+    tagline: "Director of Global Health Strategy",
     description:
-      "Led development of Rwanda's national health analytics infrastructure, building systems for real-time health data analysis and evidence-based policy making. Established data pipelines, analytics frameworks, and visualization dashboards for national health programs.",
-    icon: Globe,
-    tags: ["Health Systems", "Data Infrastructure", "Rwanda", "Policy"],
-    period: "2018-2020",
+      "Developed web-based decision-support and data visualization tools for policymakers to model COVID-19 impacts and track global clinical trial progress. Delivered successful projects for the Bill & Melinda Gates Foundation, UNICEF, and Health Data Research UK.",
+    icon: BarChart2,
+    tags: ["Data Visualization", "Decision Support", "Policy", "COVID-19"],
+    period: "2020-2021",
   },
   {
     id: "purpose-africa",
@@ -94,10 +98,10 @@ const pastProjects = [
     name: "Rwanda Biomedical Centre",
     tagline: "Data Science Advisor, Ministry of Health",
     description:
-      "Served as Data Science Advisor to the Rwanda Biomedical Centre within the Ministry of Health, providing technical guidance on health data systems, analytics strategy, and evidence-based decision making for national health programs.",
+      "Provided direct scientific and data analytic support to the Rwanda Biomedical Centre (Division of HIV, STIs and Viral Hepatitis), including surveillance indicator configuration, data quality management, and routine reporting workflows. Supported national health systems including the Rwanda Health Analytics Platform (RHAP) and DHIS2-based surveillance.",
     icon: Building2,
     tags: ["Policy Advisory", "Data Science", "Government", "Rwanda"],
-    period: "2018-2020",
+    period: "2017-2019",
   },
 ];
 
@@ -110,8 +114,8 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Building tools at the intersection of AI, health, and information integrity.
-          From research prototypes to production systems, clinical trials to health systems strengthening.
+          From research leadership and health systems to AI ventures and digital tools.
+          Spanning surveillance, clinical trials, capacity building, and misinformation detection.
         </p>
       </div>
 
@@ -120,13 +124,12 @@ export default function ProjectsPage() {
         <h2 className="text-2xl font-bold font-headline text-primary-950 mb-6">Current Projects</h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+      <div className="grid grid-cols-1 gap-8 mb-20">
         {projects.map((project) => (
           <Card
             key={project.id}
-            className={`flex flex-col hover:shadow-xl transition-all duration-300 ${
-              project.featured ? "lg:col-span-2" : ""
-            }`}
+            id={project.id}
+            className="flex flex-col hover:shadow-xl transition-all duration-300 scroll-mt-24"
           >
             <CardHeader className="pb-4">
               <div className="flex items-start justify-between gap-4">
@@ -172,6 +175,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* Links */}
+              {project.links.length > 0 && (
               <div className="flex gap-3 mt-auto">
                 {project.links.map((link) => (
                   <Button
@@ -192,6 +196,7 @@ export default function ProjectsPage() {
                   </Button>
                 ))}
               </div>
+              )}
             </CardContent>
           </Card>
         ))}
@@ -209,7 +214,8 @@ export default function ProjectsPage() {
         {pastProjects.map((project) => (
           <Card
             key={project.id}
-            className="flex flex-col hover:shadow-lg transition-all duration-300"
+            id={project.id}
+            className="flex flex-col hover:shadow-lg transition-all duration-300 scroll-mt-24"
           >
             <CardHeader className="pb-4">
               <div className="flex items-start justify-between gap-4">

@@ -44,11 +44,11 @@ export default function AboutPage() {
                     Download CV (Markdown)
                   </a>
                   <a 
-                    href="/pdf/stylized-cv.pdf" 
+                    href="/pdf/Forrest_JI_CV.pdf" 
                     download 
                     className="inline-flex items-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                   >
-                    Download Stylized CV (PDF)
+                    Download CV (PDF)
                   </a>
                 </div>
               </div>
@@ -74,8 +74,8 @@ export default function AboutPage() {
                       <div>
                         <p className="font-semibold text-foreground">MedContext</p>
                         <p className="text-sm text-muted-foreground">
-                          Agentic AI for medical misinformation detection. Submitted to Kaggle MedGemma Impact Challenge 
-                          with 91% accuracy using contextual authenticity analysis.
+                          Counterforce AI's first deployed product. 91.4% accuracy in detecting medical misinformation 
+                          (authentic images paired with false claims). Kaggle MedGemma Impact Challenge.
                         </p>
                       </div>
                     </div>
@@ -84,8 +84,8 @@ export default function AboutPage() {
                       <div>
                         <p className="font-semibold text-foreground">Counterforce AI</p>
                         <p className="text-sm text-muted-foreground">
-                          UBC Founder Venture developing AI-powered misinformation detection 
-                          and reputation management tools for organizations.
+                          Trust Defense as a Service (TDaaS) platform detecting and responding to 
+                          AI-amplified threats against institutional trust in real-time. UBC Founder Venture.
                         </p>
                       </div>
                     </div>
