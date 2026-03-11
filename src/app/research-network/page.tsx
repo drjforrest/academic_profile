@@ -87,7 +87,23 @@ export default function ResearchNetworkPage() {
         setIsBackendOffline(true);
         setError(null);
       } else {
-        setError(err instanceof Error ? err.message : 'Failed to generate network');
+        const errorMessage = err instanceof Error ? err.message : 'Failed to generate network';
+        
+        // Check for specific backend errors and provide user-friendly messages
+        if (errorMessage.includes('Not enough papers found') || 
+            errorMessage.includes('0 papers') ||
+            errorMessage.includes('SerpAPI') ||
+            errorMessage.includes('API key')) {
+          setError('Unable to fetch papers for this author. This could be because:
+
+• The author has no public papers on Google Scholar
+• The data service is temporarily unavailable
+• The author ID is invalid
+
+Try entering a different Google Scholar ID, or view the default research network below.');
+        } else {
+          setError(errorMessage);
+        }
         setIsBackendOffline(false);
       }
     } finally {
@@ -407,7 +423,7 @@ export default function ResearchNetworkPage() {
                         )}
                       </Button>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-2">
+                    <div className="mt-4 rounded-lg bg-amber-50 border border-amber-200 p-4">{error && (<> <p className="text-sm text-amber-900 font-medium mb-1">⚠️ Could not generate network</p><p className="text-sm text-amber-800 whitespace-pre-line">{error}</p><Button variant="outline" size="sm" className="mt-3" onClick={() => setError(null)}>Dismiss</Button></>)}</div><p className="text-xs text-muted-foreground mt-2">
                       Example: https://scholar.google.com/citations?user=abc123 or just abc123
                     </p>
                   </>
