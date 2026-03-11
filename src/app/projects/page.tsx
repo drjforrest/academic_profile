@@ -107,7 +107,8 @@ const pastProjects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="container py-12 md:py-20">
+    <div className="min-h-screen bg-background">
+      <div className="container py-12 md:py-20">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-primary-950">
@@ -266,13 +267,14 @@ export default function ProjectsPage() {
 
       {/* CTA */}
       <div className="mt-16 text-center">
-        <p className="text-muted-foreground mb-4">
+        <p className="text-foreground mb-4">
           Interested in collaborating on AI and health research?
         </p>
         <Button asChild size="lg">
           <a href="/contact">Get in Touch</a>
         </Button>
       </div>
+    </div>
     </div>
   );
 }

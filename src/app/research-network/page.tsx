@@ -94,13 +94,13 @@ export default function ResearchNetworkPage() {
             errorMessage.includes('0 papers') ||
             errorMessage.includes('SerpAPI') ||
             errorMessage.includes('API key')) {
-          setError('Unable to fetch papers for this author. This could be because:
-
-• The author has no public papers on Google Scholar
-• The data service is temporarily unavailable
-• The author ID is invalid
-
-Try entering a different Google Scholar ID, or view the default research network below.');
+          setError(
+            "Unable to fetch papers for this author. This could be because: " +
+            "The author has no public papers on Google Scholar; " +
+            "The data service is temporarily unavailable; " +
+            "The author ID is invalid. " +
+            "Try entering a different Google Scholar ID, or view the default research network below."
+          );
         } else {
           setError(errorMessage);
         }
