@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Dr Jamie Forrest PhD, MPH - AI & Digital Health Research",
   description:
-    "Dr Jamie Forrest is an applied data scientist and postdoctoral researcher building AI systems for health misinformation detection and digital health equity at UBC.",
+    "Dr Jamie Forrest — Technology, AI & Health Equity. Turning global evidence into action across health systems and crises. UBC.",
   metadataBase: new URL("https://drjforrest.com"),
 };
 

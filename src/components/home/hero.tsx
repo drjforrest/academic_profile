@@ -17,11 +17,11 @@ export function Hero() {
       <div className="container relative z-10 flex h-full items-center">
         <div className="max-w-2xl text-center md:text-left">
           <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl leading-tight">
-            AI Systems for Health Misinformation & Digital Equity
+            Technology, AI & Health Equity — From Evidence to Action, Globally
           </h1>
           <p className="mt-6 text-lg text-slate-200 leading-relaxed max-w-lg">
-            Building multimodal AI tools to detect misinformation and advance
-            health equity through applied data science and digital innovation.
+            Integrating technology, AI, and data science to advance health equity
+            and turn global evidence into action across health systems and crises.
           </p>
           <div className="mt-10 flex gap-4 justify-center md:justify-start flex-col sm:flex-row">
             <Button asChild size="lg" variant="hero" className="min-w-48">

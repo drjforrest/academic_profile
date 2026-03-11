@@ -34,5 +34,5 @@ export const SITE_INFO = {
   shortName: "Jamie Forrest",
   tagline: "PhD, MPH",
   description:
-    "Applied data scientist building AI systems for health misinformation detection and digital health equity.",
+    "Technology, AI & health equity — turning global evidence into action across health systems and crises.",
 };
